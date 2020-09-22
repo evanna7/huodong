@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+  <meta content="telephone=no" name="format-detection">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="full-screen" content="yes">
+  <meta name="browsermode" content="application">
+  <meta name="x5-fullscreen" content="true">
+  <meta name="x5-page-mode" content="app">
+  <meta name="x5-orientation" content="portrait">
+  <link rel="shortcut icon" href="./static/images/favicon.ico" />
+  <link rel="stylesheet" href="./static/css/taili.css?hash=clear1212999">
+  <title>奇妙夜</title>
+  <script>
+      var _hmt = _hmt || [];
+      (function () {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?b682fc1634848ec47ce71350eb3654f9";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+      })();
+  </script>
+</head>
+
+<body>
+  <div class="loading" id="loading">
+    <div class="loading-container">
+      <div class="pig"></div>
+      <div class="progress">
+        <div class="progress-bar progress-bar-danger progress-bar-striped active" id="progress-bar" style="width: 0%"></div>
+      </div>
+    </div>
+  </div>
+  <div id="slide">
+    <div class="section section-0" data-menuanchor="0">
+
+    </div>
+    <div class="section section-1" data-menuanchor="1">
+    </div>
+    <div class="section section-2" data-menuanchor="2"></div>
+    <div class="section section-3" data-menuanchor="3"></div>
+    <div class="section section-4" data-menuanchor="4"></div>
+    <div class="section section-5" data-menuanchor="5"></div>
+    <div class="section section-6" data-menuanchor="6"></div>
+    <div class="section section-7" data-menuanchor="7"></div>
+    <div class="section section-8" data-menuanchor="8"></div>
+    <div class="section section-9" data-menuanchor="9"></div>
+    <div class="section section-10" data-menuanchor="10"></div>
+    <div class="section section-11" data-menuanchor="11"></div>
+    <div class="section section-12" data-menuanchor="12"></div>
+    <div class="section section-13" data-menuanchor="13"></div>
+  </div>
+  <audio src="./static/bg.mp3?hash=clear12121916" preload loop id="music">
+    您的浏览器不支持 audio 标签。
+  </audio>
+  <div class="music-switch" id="music-switch">
+    <i class="music-switch-icon"></i>
+  </div>
+  <!-- 横屏提示 -->
+  <div class="m-horizontal">
+    <div class="wrapper">
+      <img src="static/images/horizont.png" alt="竖屏体验更佳">
+      <p>竖屏体验更佳</p>
+    </div>
+  </div>
+  <script src="./lib/jquery-1.6.2.min.js"></script>
+  <script src="./lib/lib.min.js?hash=clear140956"></script>
+  <script src="./static/js/taili.min.js?hash=clear140944"></script>
+  <script>
+    var music = document.getElementById('music');
+    var musicSwitch = document.getElementById('music-switch');
+
+    function isPaused() {
+      if (music.paused) {
+        musicSwitch.classList.add('pause');
+        musicSwitch.classList.remove('animation');
+      } else {
+        musicSwitch.classList.remove('pause');
+        musicSwitch.classList.add('animation');
+      }
+    }
+
+    document.getElementById('music').play();
+    isPaused();
+
+    document.addEventListener("WeixinJSBridgeReady", function () {
+      document.getElementById('music').play();
+      isPaused();
+    }, false);
+
+    musicSwitch.addEventListener('click', function () {
+      if (music.paused) {
+        musicSwitch.classList.remove('pause');
+        musicSwitch.classList.add('animation');
+        music.play();
+      } else {
+        musicSwitch.classList.add('pause');
+        musicSwitch.classList.remove('animation');
+        music.pause();
+      }
+    });
+  </script>
+</body>
+
+</html>

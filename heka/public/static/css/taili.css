@@ -1,0 +1,223 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #06121d;
+}
+
+.fp-tableCell {
+  position: relative;
+  background-image: url('../images/bg.jpg');
+  background-size: 100% 100%;
+}
+
+#canvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.m-horizontal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #06121d;
+}
+
+.m-horizontal.z-active {
+  display: block;
+  z-index: 999;
+}
+
+.m-horizontal .wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+.m-horizontal .wrapper img {
+  width: 187px;
+  height: 131px;
+}
+
+.m-horizontal .wrapper p {
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  margin-top: 15px;
+}
+
+body {
+  /* background-image: url('../images/bg.jpg');
+  background-size: 100% 100%; */
+}
+.loading {
+  /* display: none; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../images/bg.jpg');
+  background-color: #000000;
+  z-index: 10000;
+}
+
+.loading-container {
+  position: absolute;
+  width: 203px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  -webkit-transform: translate3d(-50%, -50%, 0);
+}
+
+.pig {
+  width: 290px;
+  height: 223px;
+  background: url('../images/pig.png') no-repeat;
+  background-size: contain;
+  transform: scale(0.7);
+  -webkit-transform: scale(0.7);
+  transform-origin: 0;
+  -webkit-transform-origin: 0;
+  animation: updown 1s linear infinite;
+  -webkit-animation: updown 1s linear infinite alternate;
+}
+
+.progress {
+  width: 203px;
+  height: 8px;
+  background: #262626;
+  overflow: visible;
+  border-radius: 20px;
+  border: 1px solid #fff;
+  margin: 0 auto;
+  margin-top: -20px;
+}
+
+.progress-bar {
+  position: relative;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.progress-bar-danger {
+  background-color: #d9534f;
+}
+
+.progress-bar.active {
+  animation: reverse progress-bar-stripes 0.40s linear infinite;
+}
+
+.progress-bar-striped {
+  /* background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent); */
+  background-image: linear-gradient(45deg,rgba(48,255,253,1) 25%,transparent 25%,transparent 50%,rgba(48,255,253,1) 50%,rgba(48,255,253,1) 75%,transparent 75%,transparent);
+  background-size: 40px 40px;
+}
+
+@-webkit-keyframes progress-bar-stripes {
+  0% {
+    background-position: 40px 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+@keyframes progress-bar-stripes {
+  0% {
+    background-position: 40px 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+@keyframes updown {
+  0% {
+    transform: scale(0.7) translate3d(0, -10px, 0);
+  }
+  100% {
+    transform: scale(0.7) translate3d(0, 0px, 0);
+  }
+}
+
+@-webkit-keyframes updown {
+  0% {
+    transform: scale(0.7) translate3d(0, -10px, 0);
+  }
+  100% {
+    transform: scale(0.7) translate3d(0, 0px, 0);
+  }
+}
+
+/* @-webkit-keyframes animate-positive {
+
+} */
+
+.music-switch {
+  position: fixed;
+  top: 1.024rem;
+  right: 0.512rem;
+  z-index: 9999;
+  width: 60px;
+  height: 60px;
+}
+
+.music-switch-icon {
+  display: block;
+  width: 52px;
+  height: 52px;
+  margin-top: 3px;
+  margin-left: 3px;
+  background: url("../images/music-sprites.png?hash=3333") no-repeat;
+  background-size: 52px 109px;
+  transform: scale(0.7);
+  -webkit-transform: scale(0.7);
+}
+
+.music-switch.animation .music-switch-icon {
+  -webkit-animation: music-switch-animation 2.5s linear infinite;
+  animation: music-switch-animation 2.5s linear infinite;
+}
+
+.music-switch.pause .music-switch-icon {
+  background-position: 0 -57px;
+}
+
+@-webkit-keyframes music-switch-animation {
+  0% {
+    -webkit-transform: rotate(0deg) scale(0.7);
+    transform: rotate(0deg) scale(0.7);
+  }
+
+  to {
+    -webkit-transform: rotate(1turn) scale(0.7);
+    transform: rotate(1turn) scale(0.7);
+  }
+}
+
+@keyframes music-switch-animation {
+  0% {
+    -webkit-transform: rotate(0deg) scale(0.7);
+    transform: rotate(0deg) scale(0.7);
+  }
+
+  to {
+    -webkit-transform: rotate(1turn) scale(0.7);
+    transform: rotate(1turn) scale(0.7);
+  }
+}
