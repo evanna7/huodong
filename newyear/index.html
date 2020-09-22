@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="telephone=no,email=no" name="format-detection">
+
+        <title>新年抢红包，欢乐过大年</title>     
+    
+<script type="text/javascript">
+    !function(win) {
+         function rem(uiWidth,maxWidth) {
+             function b(unresize) {
+                m = f.getBoundingClientRect().width > maxWidth ? uiWidth : f.getBoundingClientRect().width;
+                ratio = uiWidth/40;
+                 if(unresize) {
+                   if (document.documentElement.getBoundingClientRect().height > document.documentElement.getBoundingClientRect().width) {
+                       win.rem = m / ratio, f.style.fontSize = win.rem + "px";
+                    }else {
+                       win.rem = f.getBoundingClientRect().height / ratio, f.style.fontSize = win.rem + "px";
+                   }
+                 }else {
+                   win.rem = m / ratio, f.style.fontSize = win.rem + "px";
+                 }
+                 var j = parseFloat(win.getComputedStyle(f, null).fontSize);
+                 if (win.rem != j) {
+                   win.rem = win.rem * win.rem / j;
+                   f.style.fontSize = win.rem + "px"
+                 }
+             }
+             var c, d = win.navigator.appVersion.match(/iphone/gi) ? window.devicePixelRatio : 1,
+             e = 1,
+             f = document.documentElement,
+             g = document.createElement("meta");
+             if (win.dpr = d, window.addEventListener("resize", function () {
+                   clearTimeout(c), c = setTimeout(function(){
+                     b(typeof unresize != 'undefined'?unresize:false);
+                   }, 300)
+                 }, !1), window.addEventListener("pageshow", function (a) {
+                   window.persisted && (clearTimeout(c), c = setTimeout(b, 300))
+                 }, !1), f.setAttribute("data-dpr", d), g.setAttribute("name", "viewport"), g.setAttribute("content",
+                 "initial-scale=" + e + ", maximum-scale=" + e + ", minimum-scale=" + e + ", user-scalable=no,viewport-fit=cover"), f.firstElementChild) f.firstElementChild.appendChild(g);
+             else {
+                 var h = document.createElement("div");
+                 h.appendChild(g), document.write(h.innerHTML)
+             }
+             b(typeof unresize != 'undefined'?true:'');
+ 
+         }
+ 
+         var config = {};
+         config.navigator = win.navigator;
+         config.ua = navigator.userAgent;
+        config.uiWidth = 720;
+         rem(config.uiWidth,720);
+     }(window);
+ </script> 
+
+<link href="./css/redPackage.aa1f5e.css" rel="stylesheet"></head>
+<body>
+  <div id="root" class="g-mn">
+  </div>
+
+  <script>
+        var config = {
+            baseUrl:''
+        };
+    </script>
+    <script type="text/javascript" src="./js/preact.dll.js"></script>
+  
+    <script src="./js/laya.dll.js"></script>
+
+    <script type="text/javascript">
+         
+    </script><script type="text/javascript" src="./js/redPackage-runtime.js"></script><script type="text/javascript" src="./js/redPackage.e8584b.js"></script></body>
+
+</html>
