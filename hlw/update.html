@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div, body {
+            margin: 0;
+            padding: 0;
+        }
+        .update-con{
+            background: url(./static/update-wap.jpg) no-repeat #2cbcf8;
+            background-size: 100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        .update-con1{
+            background: url(./static/update.jpg) no-repeat #26b2ed ; 
+            /* #26b2ed */
+            background-size: 100%;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        .update-con2{
+            background: url(./static/update1.jpg) no-repeat #26b2ed ; 
+            /* #26b2ed */
+            background-size: 100%;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="j-update" id="j-update">
+    <div class="update-con" id="j-update-cont">
+    </div>
+</div>
+<script>
+    // 横屏切换图片
+    function handleScreenRotate() {
+        // 横竖屏
+        var RESIZE_EV = 'onorientationchange' in window ? 'orientationchange' : 'resize',
+            resize_time;
+
+        var viewport = 1;
+
+        function resize(){
+            var v_width = window.innerWidth || document.documentElement.clientWidth,
+                v_height = window.innerHeight || document.documentElement.clientHeight;
+
+            if(v_width > v_height){
+                viewport = 0;
+            } else{
+                viewport = 1;
+            }
+
+            if (viewport === 0) {
+                document.getElementById('j-update-cont').className = "update-con1";
+            }else{
+                document.getElementById('j-update-cont').className = "update-con";
+            }
+        }
+
+        // 判断是否PC访问
+        function isPC(){
+            var ele = document. getElementsByTagName('body')[0]; 
+            if(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+                // ele.setAttribute('class','');
+            } else {
+                document.getElementById('j-update-cont').className = "update-con2";
+            }
+        }
+        if(window.attachEvent){       
+            window.attachEvent(RESIZE_EV,function(){
+                clearTimeout(resize_time);
+                resize_time = setTimeout(function(){
+                    resize();
+                    isPC();
+                }, 300);
+            });
+        }else{
+            window.addEventListener(RESIZE_EV, function(){
+                clearTimeout(resize_time);
+                resize_time = setTimeout(function(){
+                    resize();
+                    isPC();
+                }, 300);
+            });
+        }
+        resize();
+        isPC();
+    }
+    handleScreenRotate();
+</script>
+</body>
+</html>
